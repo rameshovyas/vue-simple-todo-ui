@@ -14,12 +14,15 @@
        <input v-model="newTodo"></input>
        <button @click="addTodo()">Add Task</button>
        <ul>
-           <li v-for="todo in todos" :key="todo.id">
+           <li v-for="todo in filteredList" :key="todo.id">
                <input type="checkbox" v-model="todo.done">
                <span :class="{ completed: todo.done }">{{ todo.text }}</span>
                <button @click="removeTodo(todo)">Remove</button>
            </li>
        </ul>
+       <button @click="hideCompleted = !hideCompleted">
+           {{ hideCompleted ? "Show All Tasks" : "Hide Completed Tasks"}}
+       </button>
     </div>
 </body>
 <script src="app.js"></script>

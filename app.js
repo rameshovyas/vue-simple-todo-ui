@@ -3,6 +3,7 @@ let id = 0;
 const app = Vue.createApp({
     data() {
         return {
+          hideCompleted: false,
           newTodo: '',
           todos :[
               {id: ++id, text: 'Try new app in Vue',done:true},
@@ -12,6 +13,11 @@ const app = Vue.createApp({
               {id: ++id, text: 'Learn Vedas',done:false},              
           ]
 
+        }
+    },
+    computed: {
+        filteredList() {
+            return this.hideCompleted ? this.todos.filter((t)=> !t.done) : this.todos
         }
     },
     methods: {
