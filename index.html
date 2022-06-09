@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Vue Js ToDo UI</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+
+       <input v-model="newTodo"></input>
+       <button @click="addTodo()">Add Task</button>
+       <ul>
+           <li v-for="todo in todos" :key="todo.id">
+               {{ todo.text }}
+               <button @click="removeTodo(todo)">Remove</button>
+           </li>
+       </ul>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
