@@ -5,15 +5,18 @@ const app = Vue.createApp({
         return {
           newTodo: '',
           todos :[
-              {id: ++id, text: 'Try new app in Vue'},
-              {id: ++id, text: 'Learn Actix Web'}
+              {id: ++id, text: 'Try new app in Vue',done:true},
+              {id: ++id, text: 'Learn Actix Web',done:true},
+              {id: ++id, text: 'Learn Rust Programming',done:false},
+              {id: ++id, text: 'Learn Sanskrit',done:false},
+              {id: ++id, text: 'Learn Vedas',done:false},              
           ]
 
         }
     },
     methods: {
         addTodo() {
-            this.todos.push({id: ++id, text: this.newTodo})
+            this.todos.push({id: ++id, text: this.newTodo,done:false})
             this.newTodo='';
         },
 
